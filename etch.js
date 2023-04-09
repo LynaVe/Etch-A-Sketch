@@ -3,7 +3,7 @@ let squares = createMultipleSquare.querySelectorAll('div');
 let subDiv = document.getElementsByClassName('sub-container');
 let getColor = document.querySelector(".color-picker");
 
-let clickMouse = true;
+
 
 function createSixteenxSixteen(size){     //create a 16x16 grid box
     squares.forEach((div) => div.remove());
@@ -28,8 +28,8 @@ function multipleColorChange(){ //change the bg color in multiple color
     
         for (let i = 0; i < subDiv.length; i++) {
             subDiv[i].onmouseover = function(e) {
+            if (e.buttons === 1){
             let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            if(clickMouse){
             e.target.style.backgroundColor = randomColor;
         }
     }
@@ -40,7 +40,7 @@ function eraseButton(){ //erase the color
     
         for (let i = 0; i < subDiv.length; i++) {
             subDiv[i].onmouseover = function(e) {
-            if(clickMouse){
+            if (e.buttons === 1){
             e.target.style.backgroundColor = null;
         }
     }
@@ -51,7 +51,7 @@ function changeSingleColor(){
     
     for (let i = 0; i < subDiv.length; i++) {
         subDiv[i].onmouseover = function(e) {
-        if(clickMouse){
+        if (e.buttons === 1){
         e.target.style.backgroundColor = getColor.value;
         }
     }
@@ -66,6 +66,3 @@ function clearButton(){
         }
 }
 
-document.querySelector("body").addEventListener("click",() => {
-    clickMouse = !clickMouse;
-});
