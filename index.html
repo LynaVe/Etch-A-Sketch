@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-etch.css">
+    <script src="etch.js" defer></script>
+</head>
+<body>
+    <div class="button-container">
+        <h1 class="all-button">Etch A Sketch</h1>
+        <span>Choose a Color:</span> <input class="color-picker" type="color" ></input>
+        <button class="all-button" onclick="changeSingleColor()">Single Color</button>
+        <button class="all-button" onclick="multipleColorChange()">Rainbow Color</button>
+        <button class="all-button" onclick="eraseButton()">Erase</button>
+        <button class="all-button" onclick="clearButton()">Clear</button>
+        <p>Grid Size:</p>
+        <input class="range-input" type="range" id="points" name="points" min="1" max="100" value="16" onchange="changeSize(this.value)">
+    </div>
+
+    <div class="main-container"></div>
+  
+    
+</body>
+</html>
